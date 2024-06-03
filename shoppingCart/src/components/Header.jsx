@@ -59,7 +59,7 @@ export const Header = ({ cart }) => {
                     d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                   />
                 </svg>
-                <span className=" p-2 font-extrabold rounded-lg  absolute  right-0 top-[-15px] text-red-700  text-[20px]">{cart.length}</span>
+                {cart.length > 0 ? <span className=" flex items-center justify-center bg-red-600  w-5 h-5 p-3 font-bold rounded-lg  absolute  right-0 top-[-10px] text-white  text-[17px]">{cart.length}</span> : null}
               </div>
             </Link>
 

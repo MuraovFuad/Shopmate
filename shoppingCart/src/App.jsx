@@ -2,12 +2,18 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Cart } from "./pages/Cart";
 import { Header } from "./components/Header";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart") || "[]")
+  );
   const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <div>
@@ -38,6 +44,7 @@ function App() {
           />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

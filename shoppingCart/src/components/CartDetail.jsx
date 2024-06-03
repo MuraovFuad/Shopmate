@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import { useEffect } from "react";
+
 export const CartDetail = ({ product, setModal, modal, cart, setCart }) => {
+
   const handleAdd = () => {
     const selectedItem = cart.some((item) => item.id === product.id);
     if (!selectedItem) {
